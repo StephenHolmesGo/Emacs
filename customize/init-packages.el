@@ -27,7 +27,8 @@
                 exec-path-from-shell
                 ;; --- Themes ---
                 monokai-theme
-				popwin
+		popwin
+		all-the-icons
                 ;; solarized-theme
                 ) "Default packages")
 
@@ -69,3 +70,14 @@
 (setq enable-recursive-minibuffers t)
 
 (provide 'init-packages)
+
+;;configure for neotree
+(add-to-list 'load-path "/root/.emacs.d/elpa/neotree")
+(require 'neotree)
+(global-set-key [f4] 'neotree)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(setq neo-smart-open t)
+(neotree-show)
+
+;;configure for all-the-icons
+(require 'all-the-icons)
